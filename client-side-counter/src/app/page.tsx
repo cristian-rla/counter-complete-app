@@ -3,13 +3,21 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function Home() {
+
+  const handleSubmit = () =>{
+    fetch(`http://localhost:3000/api/operacion?num1=${num1}&num2=${num2}&opp=${operator}`)
+    .then(res => res.json())
+    .then(data => setResult(data.opResult));
+    
+  };
+
   const [num1, setNum1] = useState("");
   const [num2, setNum2] = useState("");
   const [operator, setOperator] = useState("+");
   const [result, setResult] = useState(null);
 
   return (
-<div className="flex flex-col items-center p-6 bg-gray-100 min-h-screen">
+    <div className="flex flex-col items-center p-6 bg-gray-100 min-h-screen">
       <div className="self-center flex gap-2 mb-4">
         <input
           type="number"
@@ -37,7 +45,7 @@ export default function Home() {
         />
       </div>
       <button
-        onClick={undefined} //CAMBIAR AQUI
+        onClick={handleSubmit} //CAMBIAR AQUI
         className="p-2 bg-blue-500 text-white rounded hover:bg-blue-600"
       >
         Calcular
