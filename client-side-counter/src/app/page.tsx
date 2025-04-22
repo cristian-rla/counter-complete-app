@@ -34,7 +34,7 @@ export default function Home() {
 
   return (
     <div className="self-center flex flex-col items-center p-6 bg-gray-100 min-h-screen">
-              <div className="text-2xl mt-5 font-semibold text-black m-auto">Calculadora (cliente-Servidor)</div>
+      <div className="text-2xl mt-3 mb-3 font-semibold text-black m-auto">Calculadora (cliente-Servidor)</div>
 
       <div className="flex flex-col m-auto">
         <div className="flex gap-2 mb-4">
